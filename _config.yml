@@ -5,9 +5,9 @@
 # Site
 title: Hexo
 subtitle:
-description:
-author: John Doe
-language:
+description: 惟贤惟德，能服于人
+author: wananpei
+language: zh-Hans
 timezone:
 
 # URL
@@ -68,4 +68,6 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:wanap/wanap.github.io.git
+  branch: master

@@ -84,15 +84,22 @@
 
 
 
-<meta name="description" content="惟贤惟德，能服于人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://wananpei.me/tags/git/index.html">
+<meta name="description" content="git远程命令  git remote [-v]  列出所有远程主机
+  git remote add &amp;lt;主机名&amp;gt;  添加一个新的远程 Git 仓库
+  git remote rm &amp;lt;主机名&amp;gt;  用于删除远程主机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git-remote">
+<meta property="og:url" content="http://wananpei.me/2016/09/29/git-remote/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="惟贤惟德，能服于人">
+<meta property="og:description" content="git远程命令  git remote [-v]  列出所有远程主机
+  git remote add &amp;lt;主机名&amp;gt;  添加一个新的远程 Git 仓库
+  git remote rm &amp;lt;主机名&amp;gt;  用于删除远程主机">
+<meta property="og:updated_time" content="2016-09-29T04:37:06.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="惟贤惟德，能服于人">
+<meta name="twitter:title" content="git-remote">
+<meta name="twitter:description" content="git远程命令  git remote [-v]  列出所有远程主机
+  git remote add &amp;lt;主机名&amp;gt;  添加一个新的远程 Git 仓库
+  git remote rm &amp;lt;主机名&amp;gt;  用于删除远程主机">
 
 
 
@@ -110,7 +117,7 @@
   };
 </script>
 
-  <title> 标签: git | Hexo </title>
+  <title> git-remote | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,7 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -209,46 +216,133 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        git
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                git-remote
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-29T12:35:17+08:00" content="2016-09-29">
+              2016-09-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="git远程命令"><a href="#git远程命令" class="headerlink" title="git远程命令"></a>git远程命令</h2><p>  git remote [-v]  列出所有远程主机</p>
+<p>  git remote add &lt;主机名&gt; <url> 添加一个新的远程 Git 仓库</url></p>
+<p>  git remote rm &lt;主机名&gt; <url> 用于删除远程主机</url></p>
+<a id="more"></a>
+<h2 id="从远程主机更新"><a href="#从远程主机更新" class="headerlink" title="从远程主机更新"></a>从远程主机更新</h2><pre><code>git fetch &lt;主机名&gt; &lt;分支名&gt;
+</code></pre><p>然后就可以使用<code>git merge</code>命令或<code>git rebase</code>命令，在本地分支上合并远程分支  </p>
+<pre><code>#在当前分支上合并orgin主机的master分支
+git merge origin/master 或 git rebase origin/master  
+</code></pre><p>或者直接使用git pull命令，本地分支名不写代表合并到本地当前分支  </p>
+<pre><code>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt; 
+</code></pre><p><code>git fetch</code> 是将更新取回本地，需要再<code>git merge</code>， 而<code>git pull</code>是一步到位，取回更新并合并</p>
+<h2 id="将本地代码推送到远程主机"><a href="#将本地代码推送到远程主机" class="headerlink" title="将本地代码推送到远程主机"></a>将本地代码推送到远程主机</h2><pre><code>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
+</code></pre><p>创建一个远程分支</p>
+<pre><code>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;新远程分支名&gt;
+</code></pre><p>删除指定的远程分支</p>
+<pre><code>git push origin --delete &lt;远程分支名&gt;
+或者推送一个空的本地分支到远程分支
+git push origin :&lt;远程分支名&gt;
+</code></pre><h2 id="如何避免每次输入密码"><a href="#如何避免每次输入密码" class="headerlink" title="如何避免每次输入密码"></a>如何避免每次输入密码</h2><p>如果不想在每一次推送时都输入用户名与密码，你可以设置一个 “credential cache”。 最简单的方式就是将其保存在内存中几分钟，可以简单地运行 git config –global credential.helper cache 来设置它。</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/09/28/git-commond/" itemprop="url">
-              
-                <span itemprop="name">git-commond</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-28T18:40:57+08:00"
-              content="2016-09-28" >
-          09-28
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/29/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -256,6 +350,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -275,8 +373,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -326,6 +433,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git远程命令"><span class="nav-number">1.</span> <span class="nav-text">git远程命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远程主机更新"><span class="nav-number">2.</span> <span class="nav-text">从远程主机更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将本地代码推送到远程主机"><span class="nav-number">3.</span> <span class="nav-text">将本地代码推送到远程主机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何避免每次输入密码"><span class="nav-number">4.</span> <span class="nav-text">如何避免每次输入密码</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -429,6 +547,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

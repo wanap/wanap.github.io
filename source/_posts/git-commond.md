@@ -4,9 +4,7 @@ date: 2016-09-28 18:40:57
 tags: git
 categories: 技术
 ---
-## git命令 ##
-
-###Git原理：
+### Git原理：
 ```javascript
 
         push <-           -> checkout
@@ -15,7 +13,9 @@ Remote------------Repository-------------------workspace
                        commit <-     add <-
 ```
 
-###名词解释：
+<!-- more -->
+
+### 名词解释：
 
 Workspace：工作区
 
@@ -26,7 +26,7 @@ Repository：仓库区（或本地仓库）
 Remote：远程仓库
 
 
-###Git常用命令：
+### Git常用命令：
 
 1.如果要上传到GitHub，要先在GitHub上新建一个Repository，然后git clone [url] 到本地
 
